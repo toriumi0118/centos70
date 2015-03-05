@@ -40,10 +40,10 @@
         - restart apache
     - name: install mariadb
       yum: name=mariadb-server enablerepo=remi,epel state=present
-#    - name: copy my.cnf.custom
-#      copy: src=my.cnf.custom dest=/etc/my.cnf backup=yes
-    - name: start mysql and enabled
-      service: name=mysqld state=started enabled=yes
+    - name: copy my.cnf.custom
+      copy: src=my.cnf.custom dest=/etc/my.cnf backup=yes
+    - name: start mariadb and enabled
+      service: name=mysql state=started enabled=yes
     - name: install ruby dependencies
       yum: name={{item}} enablerepo=remi,epel state=present
       with_items:
