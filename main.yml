@@ -6,8 +6,8 @@
   tasks:
     - name: yum update
       yum: name=* state=latest
-    - name: disable iptables
-      service: name=iptables state=stopped enabled=no
+#    - name: disable iptables
+#      service: name=iptables state=stopped enabled=no
     - name: install libselinux-python
       yum: name=libselinux-python state=latest
     - name: remove localtime
