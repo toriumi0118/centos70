@@ -107,7 +107,7 @@
       sudo: no
     - name: install rails
       shell: /bin/bash -lc "gem install rails"
-      when: ruby_installed.rc == 0 && rails_installed.rc != 0
+      when: ruby_installed.rc == 0 and rails_installed.rc != 0
       sudo: no
 
     - name: check node js installed
